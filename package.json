@@ -1,0 +1,55 @@
+{
+  "name": "Ternion",
+  "version": "1.0.0",
+  "description": "Ternion, a simple starter kit to prototype quickly your ideas with Three.js",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "budo src/index.js:build/bundle.js --dir ./public --live --open",
+    "build": "browserify src/index.js | uglifyjs -c > public/build/bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "budo",
+    "glsl",
+    "webgl",
+    "three.js",
+    "glslify",
+    "wagner",
+    "starter",
+    "boilerplate",
+    "prototyping"
+  ],
+  "author": "Fabien Motte <contact@fabienmotte.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FabienMotte/Ternion.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FabienMotte/Ternion/issues"
+  },
+  "homepage": "https://github.com/FabienMotte/Ternion",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "babelify": "^7.2.0",
+    "budo": "^8.0.3",
+    "glslify": "^5.0.2",
+    "uglifyjs": "^2.4.10"
+  },
+  "dependencies": {
+    "@superguigui/wagner": "^0.1.15",
+    "dom-events": "^0.1.1",
+    "lodash.debounce": "^4.0.1",
+    "min-signal": "0.0.5",
+    "raf-loop": "^1.1.3",
+    "three": "^0.73.2",
+    "three-orbit-controls": "^72.0.0"
+  },
+  "browserify": {
+    "transform": [
+      "babelify",
+      "glslify"
+    ]
+  }
+}
