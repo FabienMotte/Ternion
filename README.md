@@ -32,7 +32,7 @@ Now it's time to be creative and imagine something on your own !
 
 ### Development
 
-It starts a [budō](https://github.com/mattdesl/budo) server with LiveReload and open http://localhost:9966/ for you.
+It starts a [budō](https://github.com/mattdesl/budo) server with LiveReload and open [http://localhost:9966/](http://localhost:9966/) for you.
 
 ```sh
 npm start
