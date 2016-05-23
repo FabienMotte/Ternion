@@ -1,5 +1,5 @@
 import THREE from 'three';
-import Window from '../Events/Window';
+import Window from '../events/Window';
 
 /**
  * Renderer class

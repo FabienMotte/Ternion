@@ -1,6 +1,6 @@
-import Renderer from './Core/Renderer';
-import Camera from './Core/Camera';
-import Scene from './Core/Scene';
+import Renderer from './Renderer';
+import Camera from './Camera';
+import Scene from './Scene';
 
 /**
  * App class

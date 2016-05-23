@@ -1,7 +1,7 @@
 import { BlendMode } from '@superguigui/wagner';
 import MultiPassBloomPass from '@superguigui/wagner/src/passes/bloom/MultiPassBloomPass';
-import GodrayPass from '../components/PostProcessing/passes/GodrayPass/GodrayPass';
-import HorizontalTiltShiftPass from '../components/PostProcessing/passes/HorizontalTiltShift/HorizontalTiltShift';
+import GodrayPass from '../components/postProcessing/passes/GodrayPass/GodrayPass';
+import HorizontalTiltShiftPass from '../components/postProcessing/passes/HorizontalTiltShift/HorizontalTiltShift';
 import NoisePass from '@superguigui/wagner/src/passes/noise/noise';
 import FXAAPass from '@superguigui/wagner/src/passes/fxaa/FXAAPass';
 

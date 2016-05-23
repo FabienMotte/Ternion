@@ -1,6 +1,6 @@
 import THREE from 'three';
-import OrbitControls from '../Helpers/OrbitControls';
-import Window from '../Events/Window';
+import OrbitControls from '../helpers/OrbitControls';
+import Window from '../events/Window';
 
 /**
  * Camera class

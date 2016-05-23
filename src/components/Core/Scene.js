@@ -1,8 +1,8 @@
 import THREE from 'three';
 import raf from 'raf-loop';
-import Clock from '../Helpers/Clock';
-import Cube from '../Cube';
-import PostProcessing from '../PostProcessing/PostProcessing';
+import Clock from '../helpers/Clock';
+import Cube from '../meshes/cube';
+import PostProcessing from '../postProcessing/PostProcessing';
 
 /**
  * Scene class
