@@ -38,7 +38,7 @@
     "uglifyjs": "^2.4.10"
   },
   "dependencies": {
-    "@superguigui/wagner": "^0.1.22",
+    "@superguigui/wagner": "^0.1.23",
     "dom-events": "^0.1.1",
     "lodash.debounce": "^4.0.6",
     "min-signal": "0.0.5",
