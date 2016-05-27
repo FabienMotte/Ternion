@@ -14,7 +14,7 @@ class App {
 
     // Renderer
     const renderer = new Renderer();
-    const container = document.getElementById( 'container' );
+    const container = document.getElementById( 'webgl-container' );
     container.appendChild( renderer.domElement );
 
     // Camera

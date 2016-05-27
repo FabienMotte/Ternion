@@ -13,7 +13,7 @@ class Camera extends THREE.PerspectiveCamera {
   constructor( fov, aspect, near, far ) {
     super( fov, aspect, near, far );
 
-    this.controls = new OrbitControls( this );
+    this.controls = new OrbitControls( this, document.getElementById( 'webgl-container' ) );
 
     Window.add( ::this.resize );
   }
