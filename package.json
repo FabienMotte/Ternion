@@ -3,6 +3,7 @@
   "version": "2.0.4",
   "description": "Ternion, a simple starter kit to prototype quickly your ideas with Three.js",
   "main": "src/index.js",
+  "private": true,
   "scripts": {
     "start": "budo src/index.js:build/bundle.js --dir ./public --live --open",
     "build": "browserify src/index.js | uglifyjs -c > public/build/bundle.js",
