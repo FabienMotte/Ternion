@@ -1,7 +1,7 @@
 import THREE from 'three';
 import raf from 'raf-loop';
 import Clock from '../helpers/Clock';
-import Cube from '../meshes/cube';
+import Cube from '../meshes/Cube';
 import PostProcessing from '../postProcessing/PostProcessing';
 
 /**
