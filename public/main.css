@@ -7,7 +7,7 @@ body {
   overflow: hidden;
 }
 
-#container {
+#webgl-container {
   width: 100%;
   height: 100%;
 }
