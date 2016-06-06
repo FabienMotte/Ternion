@@ -9,7 +9,7 @@ class Clock extends THREE.Clock {
    * constructor method
    */
   constructor() {
-    super( true ); // Autostart
+    super(true); // Autostart
   }
 
   /**

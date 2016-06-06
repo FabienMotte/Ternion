@@ -10,14 +10,14 @@ class Renderer extends THREE.WebGLRenderer {
    * constructor method
    * @param {object} options Options
    */
-  constructor( options = { antialias: true, alpha: true } ) {
-    super( options );
+  constructor(options = { antialias: true, alpha: true }) {
+    super(options);
 
-    this.setSize( window.innerWidth, window.innerHeight );
-    this.setPixelRatio( window.devicePixelRatio );
-    this.setClearColor( 0x0a0a0a, 1.0 );
+    this.setSize(window.innerWidth, window.innerHeight);
+    this.setPixelRatio(window.devicePixelRatio);
+    this.setClearColor(0x0a0a0a, 1.0);
 
-    Window.add( ::this.resize );
+    Window.add(::this.resize);
   }
 
   /**
@@ -25,8 +25,8 @@ class Renderer extends THREE.WebGLRenderer {
    * @param {number} width  Width
    * @param {number} height Height
    */
-  resize( width, height ) {
-    this.setSize( width, height );
+  resize(width, height) {
+    this.setSize(width, height);
   }
 }
 

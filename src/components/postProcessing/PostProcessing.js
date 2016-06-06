@@ -12,14 +12,14 @@ class PostProcessing {
    * @param {Renderer} renderer Renderer instance
    * @param {Camera}   camera   Camera instance
    */
-  constructor( scene, renderer, camera ) {
+  constructor(scene, renderer, camera) {
     this.scene = scene;
     this.renderer = renderer;
     this.camera = camera;
     this.config = postProcessingConfig;
 
     this.active = this.config.active;
-    this.composer = new EffectComposer( this.renderer, this.config.effectComposer );
+    this.composer = new EffectComposer(this.renderer, this.config.effectComposer);
     this.passes = this.config.passes;
   }
 
@@ -28,18 +28,18 @@ class PostProcessing {
    */
   update() {
 
-    if( this.active ) {
+    if(this.active) {
 
       this.composer.reset();
-      this.composer.render( this.scene, this.camera );
+      this.composer.render(this.scene, this.camera);
       this.passes
-        .filter( pass => pass.active )
-        .forEach( pass => this.composer.pass( pass.constructor ) );
+        .filter(pass => pass.active)
+        .forEach(pass => this.composer.pass(pass.constructor));
       this.composer.toScreen();
 
     } else {
 
-      this.renderer.render( this.scene, this.camera );
+      this.renderer.render(this.scene, this.camera);
     }
   }
 }

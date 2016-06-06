@@ -11,15 +11,15 @@ class Cube extends THREE.Mesh {
    * constructor method
    */
   constructor() {
-    super( new CubeGeometry(), new CubeMaterial({ wireframe: true }) );
+    super(new CubeGeometry(), new CubeMaterial({ wireframe: true }));
   }
 
   /**
    * update method
    * @param {number} time Time
    */
-  update( time ) {
-    this.material.update( time );
+  update(time) {
+    this.material.update(time);
   }
 }
 

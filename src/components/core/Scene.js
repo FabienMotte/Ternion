@@ -14,12 +14,12 @@ class Scene extends THREE.Scene {
    * @param {Renderer} Renderer Renderer instance
    * @param {Camera}   Camera   Camera instance
    */
-  constructor( Renderer, Camera ) {
+  constructor(Renderer, Camera) {
     super();
 
     this.renderer = Renderer;
     this.camera = Camera;
-    this.postProcessing = new PostProcessing( this, this.renderer, this.camera );
+    this.postProcessing = new PostProcessing(this, this.renderer, this.camera);
 
     this.clock = new Clock();
 
@@ -32,9 +32,9 @@ class Scene extends THREE.Scene {
   createScene() {
 
     this.cube = new Cube();
-    this.add( this.cube );
+    this.add(this.cube);
 
-    this.raf = raf( ::this.render ).start();
+    this.raf = raf(::this.render).start();
   }
 
   /**
@@ -45,10 +45,10 @@ class Scene extends THREE.Scene {
     this.cube.rotation.x += 0.01;
     this.cube.rotation.y += 0.02;
 
-    this.cube.update( this.clock.time );
+    this.cube.update(this.clock.time);
 
     this.postProcessing.update();
-    this.camera.update( this.clock.delta );
+    this.camera.update(this.clock.delta);
   };
 }
 

@@ -9,7 +9,7 @@ class CubeGeometry extends THREE.BoxGeometry {
    * constructor method
    */
   constructor() {
-    super( 1, 1, 1 );
+    super(1, 1, 1);
   }
 }
 

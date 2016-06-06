@@ -6,6 +6,6 @@
  * @param  {number} r Value to interpolate
  * @return {number}   Lerped value
  */
-export default function lerp( x, y, r ) {
-  return x + ( ( y - x ) * r );
+export default function lerp(x, y, r) {
+  return x + ((y - x) * r);
 }

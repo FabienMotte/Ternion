@@ -11,12 +11,12 @@ class EffectComposer extends Composer {
    * @param {object} renderer Renderer
    * @param {object} options  Options
    */
-  constructor( renderer, options ) {
-    super( renderer, options );
+  constructor(renderer, options) {
+    super(renderer, options);
 
-    this.setSize( window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio );
+    this.setSize(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio);
 
-    Window.add( ::this.resize );
+    Window.add(::this.resize);
   }
 
   /**
@@ -24,8 +24,8 @@ class EffectComposer extends Composer {
    * @param {number} width  Width
    * @param {number} height Height
    */
-  resize( width, height ) {
-    this.setSize( width * window.devicePixelRatio, height * window.devicePixelRatio );
+  resize(width, height) {
+    this.setSize(width * window.devicePixelRatio, height * window.devicePixelRatio);
   }
 }
 
