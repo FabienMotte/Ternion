@@ -13,13 +13,13 @@ class Window extends Signal {
   constructor() {
     super();
 
-    on(window, 'resize', debounce(::this.onResize, 100));
+    on(window, 'resize', debounce(::this.handleResize, 100));
   }
 
   /**
-   * onResize method
+   * handleResize method
    */
-  onResize() {
+  handleResize() {
     this.dispatch(window.innerWidth, window.innerHeight);
   }
 }

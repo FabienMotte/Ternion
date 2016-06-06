@@ -13,14 +13,15 @@ class PostProcessing {
    * @param {Camera}   camera   Camera instance
    */
   constructor(scene, renderer, camera) {
-    this.scene = scene;
+    
+    this.scene    = scene;
     this.renderer = renderer;
-    this.camera = camera;
-    this.config = postProcessingConfig;
+    this.camera   = camera;
+    this.config   = postProcessingConfig;
 
-    this.active = this.config.active;
+    this.active   = this.config.active;
     this.composer = new EffectComposer(this.renderer, this.config.effectComposer);
-    this.passes = this.config.passes;
+    this.passes   = this.config.passes;
   }
 
   /**
