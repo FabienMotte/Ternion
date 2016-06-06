@@ -8,7 +8,7 @@ import Scene from './Scene';
 class App {
 
   /**
-   * Begin function
+   * begin method
    */
   static begin() {
 

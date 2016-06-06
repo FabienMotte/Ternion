@@ -11,8 +11,8 @@ const fragment = glslify( './frag.glsl' );
 class HorizontalTiltShift extends Pass {
 
   /**
-   * Constructor function
-   * @param  {object} options Options
+   * constructor method
+   * @param {object} options Options
    */
   constructor( options = {} ) {
     super();
@@ -23,8 +23,8 @@ class HorizontalTiltShift extends Pass {
   }
 
   /**
-   * Run function
-   * @param  {object} composer Composer
+   * run method
+   * @param {object} composer Composer
    */
   run( composer ) {
     this.shader.uniforms.h.value = this.params.h;

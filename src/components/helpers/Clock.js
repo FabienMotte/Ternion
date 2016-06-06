@@ -6,24 +6,23 @@ import THREE from 'three';
 class Clock extends THREE.Clock {
 
   /**
-   * Constructor function
-   * @return {void}
+   * constructor method
    */
   constructor() {
     super( true ); // Autostart
   }
 
   /**
-   * Delta getter
-   * @return {integer} Delta
+   * delta getter
+   * @return {number} Delta
    */
   get delta() {
     return this.getDelta();
   }
 
   /**
-   * Time getter
-   * @return {integer} Elapsed time
+   * time getter
+   * @return {number} Elapsed time
    */
   get time() {
     return this.getElapsedTime();

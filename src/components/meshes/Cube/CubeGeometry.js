@@ -6,7 +6,7 @@ import THREE from 'three';
 class CubeGeometry extends THREE.BoxGeometry {
 
   /**
-   * Constructor function
+   * constructor method
    */
   constructor() {
     super( 1, 1, 1 );

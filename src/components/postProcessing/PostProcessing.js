@@ -7,10 +7,10 @@ import postProcessingConfig from '../../config/postProcessing';
 class PostProcessing {
 
   /**
-   * Constructor function
-   * @param  {Scene} scene       Scene instance
-   * @param  {Renderer} renderer Renderer instance
-   * @param  {Camera} camera     Camera instance
+   * constructor method
+   * @param {Scene}    scene    Scene instance
+   * @param {Renderer} renderer Renderer instance
+   * @param {Camera}   camera   Camera instance
    */
   constructor( scene, renderer, camera ) {
     this.scene = scene;
@@ -24,7 +24,7 @@ class PostProcessing {
   }
 
   /**
-   * Update function
+   * update method
    */
   update() {
 

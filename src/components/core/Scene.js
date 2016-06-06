@@ -10,7 +10,7 @@ import PostProcessing from '../postProcessing/PostProcessing';
 class Scene extends THREE.Scene {
 
   /**
-   * Constructor function
+   * constructor method
    * @param {Renderer} Renderer Renderer instance
    * @param {Camera}   Camera   Camera instance
    */
@@ -27,7 +27,7 @@ class Scene extends THREE.Scene {
   }
 
   /**
-   * CreateScene function
+   * createScene method
    */
   createScene() {
 
@@ -38,7 +38,7 @@ class Scene extends THREE.Scene {
   }
 
   /**
-   * Render function
+   * render method
    */
   render() {
 

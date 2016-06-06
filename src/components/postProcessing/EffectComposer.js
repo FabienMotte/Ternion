@@ -7,24 +7,22 @@ import Window from '../Events/Window';
 class EffectComposer extends Composer {
 
   /**
-   * Constructor function
-   * @param  {object} renderer Renderer
-   * @param  {object} options  Options
-   * @return {void}
+   * constructor method
+   * @param {object} renderer Renderer
+   * @param {object} options  Options
    */
   constructor( renderer, options ) {
     super( renderer, options );
-    
+
     this.setSize( window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio );
 
     Window.add( ::this.resize );
   }
 
   /**
-   * Resize function
-   * @param  {integer} width  Width
-   * @param  {integer} height Height
-   * @return {void}
+   * resize method
+   * @param {number} width  Width
+   * @param {number} height Height
    */
   resize( width, height ) {
     this.setSize( width * window.devicePixelRatio, height * window.devicePixelRatio );

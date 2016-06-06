@@ -7,7 +7,7 @@ var glslify = require('glslify');
 class CubeMaterial extends THREE.ShaderMaterial {
 
   /**
-   * Constructor function
+   * constructor method
    * @param {Object} options Options
    */
   constructor( options ) {
@@ -23,7 +23,7 @@ class CubeMaterial extends THREE.ShaderMaterial {
   }
 
   /**
-   * Update function
+   * update method
    * @param {number} time Time
    */
   update( time ) {

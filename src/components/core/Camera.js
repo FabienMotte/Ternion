@@ -8,7 +8,7 @@ import Window from '../events/Window';
 class Camera extends THREE.PerspectiveCamera {
 
   /**
-   * Constructor function
+   * constructor method
    */
   constructor( fov, aspect, near, far ) {
     super( fov, aspect, near, far );
@@ -19,18 +19,17 @@ class Camera extends THREE.PerspectiveCamera {
   }
 
   /**
-   * Update function
-   * @param  {number} delta Delta
+   * update method
+   * @param {number} delta Delta
    */
   update( delta ) {
     this.controls.update( delta );
   }
 
   /**
-   * Resize function
-   * @param  {integer} width  Width
-   * @param  {integer} height Height
-   * @return {void}
+   * resize method
+   * @param {number} width  Width
+   * @param {number} height Height
    */
   resize( width, height ) {
     this.aspect = width / height;

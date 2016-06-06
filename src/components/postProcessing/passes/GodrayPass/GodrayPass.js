@@ -11,8 +11,8 @@ const fragment = glslify( './frag.glsl' );
 class GodrayPass extends Pass {
 
   /**
-   * Constructor function
-   * @param  {object} options Options
+   * constructor method
+   * @param {object} options Options
    */
   constructor( options = {} ) {
     super();
@@ -32,8 +32,8 @@ class GodrayPass extends Pass {
   }
 
   /**
-   * Run function
-   * @param  {object} composer Composer
+   * run method
+   * @param {object} composer Composer
    */
   run( composer ) {
     this.shader.uniforms.fX.value = this.params.fX;

@@ -8,14 +8,14 @@ import CubeMaterial from './CubeMaterial';
 class Cube extends THREE.Mesh {
 
   /**
-   * Constructor function
+   * constructor method
    */
   constructor() {
     super( new CubeGeometry(), new CubeMaterial({ wireframe: true }) );
   }
 
   /**
-   * Update function
+   * update method
    * @param {number} time Time
    */
   update( time ) {

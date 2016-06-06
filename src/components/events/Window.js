@@ -8,7 +8,7 @@ import debounce from 'lodash.debounce';
 class Window extends Signal {
 
   /**
-   * Constructor function
+   * constructor method
    */
   constructor() {
     super();
@@ -17,7 +17,7 @@ class Window extends Signal {
   }
 
   /**
-   * OnResize function
+   * onResize method
    */
   onResize() {
     this.dispatch( window.innerWidth, window.innerHeight );

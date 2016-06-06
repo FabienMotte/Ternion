@@ -7,8 +7,8 @@ import Window from '../events/Window';
 class Renderer extends THREE.WebGLRenderer {
 
   /**
-   * Constructor function
-   * @param  {object} options Options
+   * constructor method
+   * @param {object} options Options
    */
   constructor( options = { antialias: true, alpha: true } ) {
     super( options );
@@ -21,10 +21,9 @@ class Renderer extends THREE.WebGLRenderer {
   }
 
   /**
-   * Resize function
-   * @param  {integer} width  Width
-   * @param  {integer} height Height
-   * @return {void}
+   * resize method
+   * @param {number} width  Width
+   * @param {number} height Height
    */
   resize( width, height ) {
     this.setSize( width, height );
