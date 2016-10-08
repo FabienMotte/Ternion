@@ -1,9 +1,7 @@
-import THREE from 'three';
 import Pass from '@superguigui/wagner/src/Pass';
 
-const glslify = require('glslify');
-const vertex = glslify('@superguigui/wagner/src/shaders/vertex/basic.glsl');
-const fragment = glslify('./frag.glsl');
+import vertexShader from 'components/postProcessing/shaders/basic.vert';
+import fragmentShader from './frag.glsl';
 
 /**
  * GodrayPass class
@@ -17,7 +15,7 @@ class GodrayPass extends Pass {
   constructor(options = {}) {
     super();
 
-    this.setShader(vertex, fragment);
+    this.setShader(vertexShader, fragmentShader);
 
     this.width            = options.width || 512;
     this.height           = options.height || 512;

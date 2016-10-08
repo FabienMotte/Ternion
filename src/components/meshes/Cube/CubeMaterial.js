@@ -1,5 +1,8 @@
 import { ShaderMaterial, Color } from 'three';
 
+import vertexShader from './shader/cube.vert';
+import fragmentShader from './shader/cube.frag';
+
 /**
  * CubeMaterial class
  */
@@ -12,8 +15,8 @@ class CubeMaterial extends ShaderMaterial {
   constructor(options) {
     super(options);
 
-    this.vertexShader = glslify('./shader/vert.glsl');
-    this.fragmentShader = glslify('./shader/frag.glsl');
+    this.vertexShader   = vertexShader;
+    this.fragmentShader = fragmentShader;
 
     this.uniforms = {
       time: { type: 'f', value: 0.0 },

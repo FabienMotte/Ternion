@@ -1,9 +1,7 @@
-import THREE from 'three';
 import Pass from '@superguigui/wagner/src/Pass';
 
-const glslify = require('glslify');
-const vertex = glslify('@superguigui/wagner/src/shaders/vertex/basic.glsl');
-const fragment = glslify('./frag.glsl');
+import vertexShader from 'components/postProcessing/shaders/basic.vert';
+import fragmentShader from './frag.glsl';
 
 /**
  * RGBSplit class
@@ -17,7 +15,7 @@ class RGBSplit extends Pass {
   constructor(options = {}) {
     super();
 
-    this.setShader(vertex, fragment);
+    this.setShader(vertexShader, fragmentShader);
     this.params.delta = new THREE.Vector2(options.xDelta, options.yDelta);
   }
 
