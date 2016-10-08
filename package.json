@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "private": true,
   "scripts": {
-    "start": "budo src/index.js:build/bundle.js --dir ./public --live --open",
+    "start": "node server.js",
     "build": "browserify src/index.js | uglifyjs -c > public/build/bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
