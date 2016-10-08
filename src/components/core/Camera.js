@@ -1,11 +1,11 @@
-import THREE from 'three';
+import { PerspectiveCamera } from 'three';
 import OrbitControls from '../helpers/OrbitControls';
 import Window from '../events/Window';
 
 /**
  * Camera class
  */
-class Camera extends THREE.PerspectiveCamera {
+class Camera extends PerspectiveCamera {
 
   /**
    * constructor method

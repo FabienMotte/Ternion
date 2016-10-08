@@ -1,9 +1,9 @@
-import THREE from 'three';
+import { Clock as ThreeClock } from 'three';
 
 /**
  * Clock class
  */
-class Clock extends THREE.Clock {
+class Clock extends ThreeClock {
 
   /**
    * constructor method

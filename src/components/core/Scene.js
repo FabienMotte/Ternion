@@ -1,4 +1,4 @@
-import THREE from 'three';
+import { Scene as ThreeScene } from 'three';
 import raf from 'raf-loop';
 import Clock from '../helpers/Clock';
 import Cube from '../meshes/Cube';
@@ -7,7 +7,7 @@ import PostProcessing from '../postProcessing/PostProcessing';
 /**
  * Scene class
  */
-class Scene extends THREE.Scene {
+class Scene extends ThreeScene {
 
   /**
    * constructor method

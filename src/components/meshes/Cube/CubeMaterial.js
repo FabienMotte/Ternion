@@ -1,10 +1,9 @@
-import THREE from 'three';
-var glslify = require('glslify');
+import { ShaderMaterial, Color } from 'three';
 
 /**
  * CubeMaterial class
  */
-class CubeMaterial extends THREE.ShaderMaterial {
+class CubeMaterial extends ShaderMaterial {
 
   /**
    * constructor method
@@ -18,7 +17,7 @@ class CubeMaterial extends THREE.ShaderMaterial {
 
     this.uniforms = {
       time: { type: 'f', value: 0.0 },
-      color: { type: 'c', value: new THREE.Color(0xffffff) }
+      color: { type: 'c', value: new Color(0xffffff) }
     }
   }
 

@@ -1,11 +1,11 @@
-import THREE from 'three';
+import { Mesh } from 'three';
 import CubeGeometry from './CubeGeometry';
 import CubeMaterial from './CubeMaterial';
 
 /**
  * Cube class
  */
-class Cube extends THREE.Mesh {
+class Cube extends Mesh {
 
   /**
    * constructor method
