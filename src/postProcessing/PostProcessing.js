@@ -1,5 +1,5 @@
 import EffectComposer from './EffectComposer';
-import postProcessingConfig from '../../config/postProcessing';
+import postProcessingConfig from 'config/postProcessing';
 
 /**
  * PostProcessing
@@ -13,7 +13,7 @@ class PostProcessing {
    * @param {Camera}   camera   Camera instance
    */
   constructor(scene, renderer, camera) {
-    
+
     this.scene    = scene;
     this.renderer = renderer;
     this.camera   = camera;

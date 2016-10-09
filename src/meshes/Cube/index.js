@@ -1,7 +1,7 @@
 import { Mesh } from 'three';
 import CubeGeometry from './CubeGeometry';
 import CubeMaterial from './CubeMaterial';
-import GUI from 'components/helpers/GUI';
+import GUI from 'helpers/GUI';
 
 /**
  * Cube class

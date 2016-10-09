@@ -1,6 +1,6 @@
 import Pass from '@superguigui/wagner/src/Pass';
 
-import vertexShader from 'components/postProcessing/shaders/basic.vert';
+import vertexShader from 'postProcessing/shaders/basic.vert';
 import fragmentShader from './frag.glsl';
 
 /**

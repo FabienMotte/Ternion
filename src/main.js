@@ -1,3 +1,3 @@
-import App from './components/core/App';
+import App from './core/App';
 
 let the = App.begin();

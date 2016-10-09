@@ -1,7 +1,7 @@
 import { PerspectiveCamera } from 'three';
 import OrbitControls from '../helpers/OrbitControls';
 import Window from '../events/Window';
-import GUI from 'components/helpers/GUI';
+import GUI from 'helpers/GUI';
 
 /**
  * Camera class
