@@ -26,7 +26,6 @@ class Camera extends PerspectiveCamera {
    * addGUI method
    */
   addGUI() {
-
     GUI.add(this.controls, 'enabled', { label: 'OrbitControls' });
   }
 

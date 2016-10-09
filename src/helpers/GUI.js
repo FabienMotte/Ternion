@@ -11,8 +11,8 @@ class GUI {
   constructor() {
     this.panel = oui.datoui();
   }
-
 }
 
 const gui = new GUI();
+
 export default gui.panel;
