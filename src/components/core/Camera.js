@@ -1,6 +1,7 @@
 import { PerspectiveCamera } from 'three';
 import OrbitControls from '../helpers/OrbitControls';
 import Window from '../events/Window';
+import GUI from 'components/helpers/GUI';
 
 /**
  * Camera class
@@ -14,8 +15,19 @@ class Camera extends PerspectiveCamera {
     super(fov, aspect, near, far);
 
     this.controls = new OrbitControls(this, document.getElementById('webgl-container'));
+    this.controls.enabled = true;
 
     Window.add(::this.resize);
+
+    this.addGUI();
+  }
+
+  /**
+   * addGUI method
+   */
+  addGUI() {
+
+    GUI.add(this.controls, 'enabled', { label: 'OrbitControls' });
   }
 
   /**
