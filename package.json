@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "start": "node server.js",
-    "build": "browserify src/index.js | uglifyjs -c > public/build/bundle.js",
+    "build": "NODE_ENV='production' browserify src/index.js | uglifyjs -c > public/build/bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
