@@ -50,6 +50,10 @@ npm run build
 
 This starter kit is opinionated, but feel free to submit issues or pull requests !
 
+## Contributors
+
+- [Patrick Heng](https://github.com/patrickheng)
+
 ## License
 
 MIT, see [LICENSE.md](LICENSE.md) for details.
