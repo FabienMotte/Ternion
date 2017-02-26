@@ -12,6 +12,7 @@ A simple **starter kit** to **prototype** quickly your ideas with Three.js.
 - Development and production (with **UglifyJS** transform) builds
 - **Glslify** transform (vert/frag shaders)
 - Some useful **basic functions** and **helpers**
+- **Stylus** support for stylesheets
 
 ## Install
 
