@@ -1,27 +1,47 @@
-import Signal from 'min-signal';
-import { on } from 'dom-events';
-import debounce from 'lodash.debounce';
+import Signal from 'min-signal'
+import { on } from 'dom-events'
+import debounce from 'lodash.debounce'
 
 /**
  * Window class
  */
-class Window extends Signal {
+class Window {
 
   /**
    * constructor method
    */
-  constructor() {
-    super();
+  constructor () {
 
-    on(window, 'resize', debounce(::this.handleResize, 100));
+    this.width = window.innerWidth
+    this.height = window.innerHeight
+
+    this.createSignals()
+    this.bind()
+  }
+
+  /**
+   * createSignals method
+   */
+  createSignals () {
+    this.onResize = new Signal()
+  }
+
+  /**
+   * bind method
+   */
+  bind () {
+    this.handleResize = this.handleResize.bind(this)
+    on(window, 'resize', debounce(this.handleResize, 100))
   }
 
   /**
    * handleResize method
    */
-  handleResize() {
-    this.dispatch(window.innerWidth, window.innerHeight);
+  handleResize () {
+    this.width = window.innerWidth
+    this.height = window.innerHeight
+    this.onResize.dispatch(this.width, this.height)
   }
 }
 
-export default new Window();
+export default new Window()
