@@ -1,4 +1,5 @@
 node_modules/
 bundle.js
 main.css
-main.css.map
+*.map
+*.log
