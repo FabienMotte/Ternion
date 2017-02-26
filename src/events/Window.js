@@ -1,4 +1,4 @@
-import Signal from 'min-signal'
+import Signal from 'quark-signal'
 import { on } from 'dom-events'
 import debounce from 'lodash.debounce'
 
@@ -11,7 +11,6 @@ class Window {
    * constructor method
    */
   constructor () {
-
     this.width = window.innerWidth
     this.height = window.innerHeight
 
