@@ -47,7 +47,6 @@
   "dependencies": {
     "@superguigui/wagner": "FabienMotte/Wagner",
     "color-shader-functions": "0.0.2",
-    "dom-events": "^0.1.1",
     "glslify-bare": "FabienMotte/glslify-bare",
     "lodash.debounce": "^4.0.8",
     "quark-signal": "^1.1.0",

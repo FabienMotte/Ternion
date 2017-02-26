@@ -30,7 +30,7 @@ class Window {
    */
   bind () {
     this.handleResize = this.handleResize.bind(this)
-    on(window, 'resize', debounce(this.handleResize, 100))
+    window.addEventListener('resize', debounce(this.handleResize, 100))
   }
 
   /**
