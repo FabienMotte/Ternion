@@ -1,5 +1,5 @@
-import OrbitControls from '../helpers/OrbitControls'
-import Window from '../events/Window'
+import OrbitControls from 'helpers/OrbitControls'
+import { Window } from 'signals'
 import GUI from 'helpers/GUI'
 
 /**
@@ -27,7 +27,7 @@ class Camera extends THREE.PerspectiveCamera {
     this.onWindowResize = this.onWindowResize.bind(this)
     Window.onResize.add(this.onWindowResize)
   }
-  
+
   /**
    * addGUI method
    */

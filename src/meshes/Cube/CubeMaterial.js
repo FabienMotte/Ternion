@@ -1,4 +1,3 @@
-
 import vertexShader from './shader/cube.vert'
 import fragmentShader from './shader/cube.frag'
 

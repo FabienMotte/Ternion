@@ -1,4 +1,4 @@
-import Window from '../events/Window'
+import { Window } from 'signals'
 
 /**
  * Renderer class

@@ -1,5 +1,5 @@
 import { Composer } from '@superguigui/wagner'
-import Window from '../Events/Window'
+import { Window } from 'signals'
 
 /**
  * EffectComposer class
