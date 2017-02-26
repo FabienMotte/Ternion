@@ -16,15 +16,23 @@ class EffectComposer extends Composer {
 
     this.setSize(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio)
 
-    Window.add(this.resize.bind(this))
+    this.bind()
   }
 
   /**
-   * resize method
+   * bind method
+   */
+  bind () {
+    this.onWindowResize = this.onWindowResize.bind(this)
+    Window.onResize.add(this.onWindowResize)
+  }
+
+  /**
+   * onWindowResize method
    * @param {number} width  Width
    * @param {number} height Height
    */
-  resize (width, height) {
+  onWindowResize (width, height) {
     this.setSize(width * window.devicePixelRatio, height * window.devicePixelRatio)
   }
 }
