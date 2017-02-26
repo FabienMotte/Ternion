@@ -31,23 +31,23 @@
   },
   "homepage": "https://github.com/FabienMotte/Ternion",
   "devDependencies": {
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-stage-0": "^6.3.13",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0",
     "babelify": "^7.3.0",
-    "budo": "^9.2.1",
-    "glslify": "^6.0.0",
+    "budo": "^9.4.7",
+    "glslify": "^6.0.1",
     "uglifyjs": "^2.4.10"
   },
   "dependencies": {
     "@superguigui/wagner": "FabienMotte/Wagner",
     "dom-events": "^0.1.1",
     "glslify-bare": "FabienMotte/glslify-bare",
-    "lodash.debounce": "^4.0.6",
+    "lodash.debounce": "^4.0.8",
     "min-signal": "0.0.6",
     "ouioui": "wearekuva/oui",
     "raf-loop": "^1.1.3",
-    "three": "^0.81.2",
-    "three-orbit-controls": "^72.0.0"
+    "three": "^0.84.0",
+    "three-orbit-controls": "^82.1.0"
   },
   "browserify": {
     "transform": [
