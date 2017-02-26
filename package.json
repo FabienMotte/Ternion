@@ -50,7 +50,7 @@
     "glslify-bare": "FabienMotte/glslify-bare",
     "lodash.debounce": "^4.0.8",
     "quark-signal": "^1.1.0",
-    "raf-loop": "^1.1.3",
+    "raf": "^3.3.0",
     "three": "^0.84.0",
     "three-orbit-controls": "^82.1.0"
   },

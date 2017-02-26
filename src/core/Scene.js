@@ -1,4 +1,4 @@
-import raf from 'raf-loop'
+import RafManager from 'helpers/RafManager'
 import Clock from 'helpers/Clock'
 import Cube from 'entities/Cube'
 import PostProcessing from 'postProcessing/PostProcessing'
@@ -40,7 +40,7 @@ class Scene extends THREE.Scene {
    */
   bind () {
     this.render = this.render.bind(this)
-    this.raf = raf(this.render).start()
+    RafManager.add(this.render)
   }
 
   /**
