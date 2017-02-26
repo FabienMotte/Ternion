@@ -24,16 +24,16 @@ class Cube extends THREE.Object3D {
    * addGUI method
    */
   addGUI () {
-    const positionFolder = GUI.addFolder({ label: 'Cube Position' })
-    const scaleFolder = GUI.addFolder({ label: 'Cube Scale' })
+    const positionFolder = GUI.addFolder('Cube Position')
+    const scaleFolder = GUI.addFolder('Cube Scale')
 
-    positionFolder.add(this.position, 'x', { label: 'position x', min: -20, max: 20, step: 1 })
-    positionFolder.add(this.position, 'y', { label: 'position y', min: -20, max: 20, step: 1 })
-    positionFolder.add(this.position, 'z', { label: 'position z', min: -20, max: 20, step: 1 })
+    positionFolder.add(this.position, 'x').name('position x').min(-10).max(10).step(0.5)
+    positionFolder.add(this.position, 'y').name('position y').min(-10).max(10).step(0.5)
+    positionFolder.add(this.position, 'z').name('position z').min(-10).max(10).step(0.5)
 
-    scaleFolder.add(this.scale, 'x', { label: 'scale x', min: 0, max: 10, step: 0.1 })
-    scaleFolder.add(this.scale, 'y', { label: 'scale y', min: 0, max: 10, step: 0.1 })
-    scaleFolder.add(this.scale, 'z', { label: 'scale z', min: 0, max: 10, step: 0.1 })
+    scaleFolder.add(this.scale, 'x').name('scale x').min(0).max(10).step(0.1)
+    scaleFolder.add(this.scale, 'y').name('scale y').min(0).max(10).step(0.1)
+    scaleFolder.add(this.scale, 'z').name('scale z').min(0).max(10).step(0.1)
   }
 
   /**

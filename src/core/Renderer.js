@@ -14,7 +14,7 @@ class Renderer extends THREE.WebGLRenderer {
 
     this.setSize(window.innerWidth, window.innerHeight)
     this.setPixelRatio(window.devicePixelRatio)
-    this.setClearColor(0x0a0a0a, 1.0)
+    this.setClearColor(this.clearColor, 1.0)
 
     this.bind()
   }

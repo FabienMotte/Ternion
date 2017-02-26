@@ -32,7 +32,7 @@ class Camera extends THREE.PerspectiveCamera {
    * addGUI method
    */
   addGUI () {
-    GUI.add(this.controls, 'enabled', { label: 'OrbitControls' })
+    GUI.add(this.controls, 'enabled').name('OrbitControls')
   }
 
   /**
