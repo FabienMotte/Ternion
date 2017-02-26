@@ -1,4 +1,4 @@
-import oui from 'ouioui';
+import oui from 'ouioui'
 
 /**
  * GUI class
@@ -8,11 +8,11 @@ class GUI {
   /**
    * constructor method
    */
-  constructor() {
-    this.panel = oui.datoui();
+  constructor () {
+    this.panel = oui.datoui()
   }
 }
 
-const gui = new GUI();
+const gui = new GUI()
 
-export default gui.panel;
+export default gui.panel

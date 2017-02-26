@@ -4,6 +4,6 @@
  * @param  {number} degrees Degrees
  * @return {number}         Radians
  */
-export default function toRadians(degrees) {
-  return degrees * Math.PI / 180;
+export default function toRadians (degrees) {
+  return degrees * Math.PI / 180
 }
