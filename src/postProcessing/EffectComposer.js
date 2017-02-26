@@ -1,4 +1,4 @@
-import { Composer } from '@superguigui/wagner'
+import Composer from './Composer'
 import { Window } from 'signals'
 
 /**
@@ -8,13 +8,13 @@ class EffectComposer extends Composer {
 
   /**
    * constructor method
-   * @param {object} renderer Renderer
-   * @param {object} options  Options
+   * @param {Object} renderer Renderer
    */
-  constructor (renderer, options) {
-    super(renderer, options)
+  constructor (renderer) {
+    console.log(renderer);
+    super(renderer)
 
-    this.setSize(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio)
+    this.renderer = renderer
 
     this.bind()
   }
@@ -29,11 +29,11 @@ class EffectComposer extends Composer {
 
   /**
    * onWindowResize method
-   * @param {number} width  Width
-   * @param {number} height Height
+   * @param {number} width  Window width
+   * @param {number} height Window height
    */
   onWindowResize (width, height) {
-    this.setSize(width * window.devicePixelRatio, height * window.devicePixelRatio)
+    this.setSize(width * this.renderer.getPixelRatio(), height * this.renderer.getPixelRatio())
   }
 }
 
