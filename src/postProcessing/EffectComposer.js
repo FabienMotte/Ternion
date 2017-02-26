@@ -11,7 +11,6 @@ class EffectComposer extends Composer {
    * @param {Object} renderer Renderer
    */
   constructor (renderer) {
-    console.log(renderer);
     super(renderer)
 
     this.renderer = renderer

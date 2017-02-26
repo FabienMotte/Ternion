@@ -1,6 +1,6 @@
 import raf from 'raf-loop'
 import Clock from 'helpers/Clock'
-import Cube from 'meshes/Cube'
+import Cube from 'entities/Cube'
 import PostProcessing from 'postProcessing/PostProcessing'
 
 /**

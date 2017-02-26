@@ -1,17 +1,21 @@
-import CubeGeometry from './CubeGeometry'
 import CubeMaterial from './CubeMaterial'
 import GUI from 'helpers/GUI'
 
 /**
  * Cube class
  */
-class Cube extends THREE.Mesh {
+class Cube extends THREE.Object3D {
 
   /**
    * constructor method
    */
   constructor () {
-    super(new CubeGeometry(), new CubeMaterial({ wireframe: true }))
+    super()
+
+    this.geometry = new THREE.BoxGeometry(1, 1, 1)
+    this.material = new CubeMaterial({ wireframe: true })
+    this.mesh = new THREE.Mesh(this.geometry, this.material)
+    this.add(this.mesh)
 
     this.addGUI()
   }

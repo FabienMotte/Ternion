@@ -1,5 +1,5 @@
-import vertexShader from './shader/cube.vert'
-import fragmentShader from './shader/cube.frag'
+import vertexShader from 'shaders/cube.vert'
+import fragmentShader from 'shaders/cube.frag'
 
 /**
  * CubeMaterial class

@@ -13,8 +13,6 @@ class Composer {
   constructor (renderer, renderTarget) {
     this.renderer = renderer
 
-    console.log(renderer)
-
     if (renderTarget === undefined) {
       const parameters = {
         minFilter: THREE.LinearFilter,
