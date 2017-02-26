@@ -1,9 +1,7 @@
-import { Clock as ThreeClock } from 'three'
-
 /**
  * Clock class
  */
-class Clock extends ThreeClock {
+class Clock extends THREE.Clock {
 
   /**
    * constructor method

@@ -1,10 +1,9 @@
-import { WebGLRenderer } from 'three'
 import Window from '../events/Window'
 
 /**
  * Renderer class
  */
-class Renderer extends WebGLRenderer {
+class Renderer extends THREE.WebGLRenderer {
 
   /**
    * constructor method

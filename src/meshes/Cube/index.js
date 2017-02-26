@@ -1,4 +1,3 @@
-import { Mesh } from 'three'
 import CubeGeometry from './CubeGeometry'
 import CubeMaterial from './CubeMaterial'
 import GUI from 'helpers/GUI'
@@ -6,7 +5,7 @@ import GUI from 'helpers/GUI'
 /**
  * Cube class
  */
-class Cube extends Mesh {
+class Cube extends THREE.Mesh {
 
   /**
    * constructor method

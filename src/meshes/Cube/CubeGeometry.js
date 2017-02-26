@@ -1,9 +1,7 @@
-import { BoxGeometry } from 'three'
-
 /**
  * CubeGeometry class
  */
-class CubeGeometry extends BoxGeometry {
+class CubeGeometry extends THREE.BoxGeometry {
 
   /**
    * constructor method

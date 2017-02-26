@@ -1,4 +1,4 @@
-const budo = require('budo');
+const budo = require('budo')
 
 budo('src/main.js', {
   serve: 'build/bundle.js',
@@ -10,6 +10,9 @@ budo('src/main.js', {
   browserify: {
     paths: [
       __dirname + '/src'
-    ]
+    ],
+    insertGlobalVars: {
+      THREE: (file, dir) => `require('three')`
+    }
   }
-});
+})

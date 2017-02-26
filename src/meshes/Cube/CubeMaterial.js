@@ -1,4 +1,3 @@
-import { ShaderMaterial, Color } from 'three'
 
 import vertexShader from './shader/cube.vert'
 import fragmentShader from './shader/cube.frag'
@@ -6,7 +5,7 @@ import fragmentShader from './shader/cube.frag'
 /**
  * CubeMaterial class
  */
-class CubeMaterial extends ShaderMaterial {
+class CubeMaterial extends THREE.ShaderMaterial {
 
   /**
    * constructor method
@@ -20,7 +19,7 @@ class CubeMaterial extends ShaderMaterial {
 
     this.uniforms = {
       time: { type: 'f', value: 0.0 },
-      color: { type: 'c', value: new Color(0xffffff) }
+      color: { type: 'c', value: new THREE.Color(0xffffff) }
     }
   }
 

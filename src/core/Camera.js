@@ -6,7 +6,7 @@ import GUI from 'helpers/GUI'
 /**
  * Camera class
  */
-class Camera extends PerspectiveCamera {
+class Camera extends THREE.PerspectiveCamera {
 
   /**
    * constructor method
