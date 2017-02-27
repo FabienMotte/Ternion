@@ -1,13 +1,17 @@
 # Ternion (ˈtɜːnɪən)
 
+[![stability][stability-image]][stability-url]
+[![js-standard-style][standard-image]][standard-url]
+
 ![Ternion](http://i.imgur.com/vhIj9en.png)
 
-A simple **starter kit** to **prototype** quickly your ideas with Three.js.
+A simple and opinionated **starter kit** to **prototype** quickly your ideas with Three.js.
 
 ## Features
 
 - **Three.js** and **post processing**
 - **dat.GUI**
+- Code linted with **Javascript Standard Style**
 - [**budō**](https://github.com/mattdesl/budo) (with **LiveReload**) for a fast development server
 - ES2015 transpiling with **Babel 6** (*stage 0* enabled)
 - Development and production (with **UglifyJS** transform) builds
@@ -59,3 +63,8 @@ This starter kit is opinionated, but feel free to submit issues or pull requests
 ## License
 
 MIT, see [LICENSE.md](LICENSE.md) for details.
+
+[stability-image]: https://img.shields.io/badge/stability-stable-brightgreen.svg?style=flat-square
+[stability-url]: https://nodejs.org/api/documentation.html#documentation_stability_index
+[standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
+[standard-url]: https://github.com/feross/standard
