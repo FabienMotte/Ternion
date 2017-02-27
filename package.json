@@ -1,6 +1,6 @@
 {
   "name": "ternion",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Ternion, a simple starter kit to prototype quickly your ideas with Three.js",
   "main": "src/index.js",
   "private": true,
