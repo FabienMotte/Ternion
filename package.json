@@ -17,7 +17,6 @@
     "webgl",
     "three.js",
     "glslify",
-    "wagner",
     "starter",
     "boilerplate",
     "prototyping"
@@ -45,7 +44,6 @@
     "uglifyjs": "^2.4.10"
   },
   "dependencies": {
-    "@superguigui/wagner": "FabienMotte/Wagner",
     "color-shader-functions": "0.0.2",
     "glslify-bare": "FabienMotte/glslify-bare",
     "lodash.debounce": "^4.0.8",
