@@ -12,23 +12,13 @@ class RAFManager {
     this.binded = true
     this.update = this.update.bind(this)
 
-    // If gsap is loaded user tweenmax ticker for better performance
-    if (typeof TweenMax === 'undefined') {
-      this.raf = raf(this.update)
-    } else {
-      TweenMax.ticker.addEventListener('tick', this.update)
-    }
+    this.raf = raf(this.update)
   }
 
   unbind () {
     this.binded = false
 
-    if (typeof TweenMax !== 'undefined') {
-      TweenMax.ticker.removeEventListener('tick', this.update)
-    }
-    if (typeof this.raf !== 'undefined') {
-      raf.cancel(this.raf)
-    }
+    raf.cancel(this.raf)
 
     for (let i = 0, l = this.datas.length; i < l; i++) {
       this.remove(this.datas[i].callback)
