@@ -8,6 +8,6 @@
  * @param  {number} stop2  Upper bound of the value's target range
  * @return {number}        Remapped number
  */
-export default function map(value, start1, stop1, start2, stop2) {
-  return ((value - start1) / (stop1 - start1)) * (stop2 - start2) + start2;
+export default function map (value, start1, stop1, start2, stop2) {
+  return ((value - start1) / (stop1 - start1)) * (stop2 - start2) + start2
 }

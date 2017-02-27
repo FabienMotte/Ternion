@@ -1,48 +1,63 @@
-import EffectComposer from './EffectComposer';
-import postProcessingConfig from 'config/postProcessing';
+import EffectComposer from './EffectComposer'
+import { RenderPass } from './passes'
+import { postProcessing } from 'config'
+import { Window } from 'signals'
+import GUI from 'helpers/GUI'
 
 /**
- * PostProcessing
- */
+* PostProcessing
+*/
 class PostProcessing {
 
-  /**
-   * constructor method
-   * @param {Scene}    scene    Scene instance
-   * @param {Renderer} renderer Renderer instance
-   * @param {Camera}   camera   Camera instance
-   */
-  constructor(scene, renderer, camera) {
+  constructor (scene, renderer, camera) {
+    this.scene = scene
 
-    this.scene    = scene;
-    this.renderer = renderer;
-    this.camera   = camera;
-    this.config   = postProcessingConfig;
+    this.camera = camera
 
-    this.active   = this.config.active;
-    this.composer = new EffectComposer(this.renderer, this.config.effectComposer);
-    this.passes   = this.config.passes;
+    this.renderer = renderer
+    this.configuration = postProcessing
+
+    this.passes = this.configuration.passes.filter(pass => pass.active)
+    this.active = this.configuration.active
+
+    this.composer = new EffectComposer(this.renderer)
+
+    this.composer.addPass(new RenderPass(this.scene, this.camera))
+
+    for (let i = 0; i < this.passes.length; i++) {
+      this.composer.addPass(this.passes[i].constructor)
+      if (i == this.passes.length - 1) {
+        this.passes[i].constructor.renderToScreen = true
+      }
+    }
+
+    // this.addGUI()
   }
 
   /**
-   * update method
-   */
-  update() {
+  * addGUI method
+  */
+  addGUI () {
+    GUI.add(this, 'active').name('PostProcessing').onChange()
+  }
 
-    if(this.active) {
+  /**
+  * getPass method
+  */
+  getPass (name) {
+    return this.passes.find(pass => pass.name === name).constructor
+  }
 
-      this.composer.reset();
-      this.composer.render(this.scene, this.camera);
-      this.passes
-        .filter(pass => pass.active)
-        .forEach(pass => this.composer.pass(pass.constructor));
-      this.composer.toScreen();
-
+  /**
+  * update method
+  */
+  update () {
+    if (this.active && this.passes.length) {
+      this.composer.render(this.scene.clock.delta, this.scene.clock.time)
     } else {
-
-      this.renderer.render(this.scene, this.camera);
+      this.renderer.render(this.scene, this.camera)
     }
   }
 }
 
-export default PostProcessing;
+export default PostProcessing

@@ -6,8 +6,14 @@ body {
   padding: 0;
   overflow: hidden;
 }
-
 #webgl-container {
   width: 100%;
   height: 100%;
 }
+/* dat.gui */
+.dg.main {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+/*# sourceMappingURL=main.css.map */

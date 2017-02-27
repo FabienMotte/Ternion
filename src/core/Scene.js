@@ -1,55 +1,60 @@
-import { Scene as ThreeScene } from 'three';
-import raf from 'raf-loop';
-import Clock from '../helpers/Clock';
-import Cube from '../meshes/Cube';
-import PostProcessing from '../postProcessing/PostProcessing';
+import RafManager from 'helpers/RafManager'
+import Clock from 'helpers/Clock'
+import Cube from 'entities/Cube'
+import PostProcessing from 'postProcessing/PostProcessing'
 
 /**
  * Scene class
  */
-class Scene extends ThreeScene {
+class Scene extends THREE.Scene {
 
   /**
    * constructor method
-   * @param {Renderer} Renderer Renderer instance
-   * @param {Camera}   Camera   Camera instance
+   * @param {Renderer} renderer renderer instance
+   * @param {Camera}   camera   camera instance
    */
-  constructor(Renderer, Camera) {
-    super();
+  constructor (renderer, camera) {
+    super()
 
-    this.renderer = Renderer;
-    this.camera = Camera;
-    this.postProcessing = new PostProcessing(this, this.renderer, this.camera);
+    this.renderer = renderer
+    this.camera = camera
+    this.postProcessing = new PostProcessing(this, this.renderer, this.camera)
 
-    this.clock = new Clock();
+    this.clock = new Clock()
 
-    this.createScene();
+    this.createScene()
   }
 
   /**
    * createScene method
    */
-  createScene() {
+  createScene () {
+    this.cube = new Cube()
+    this.add(this.cube)
 
-    this.cube = new Cube();
-    this.add(this.cube);
+    this.bind()
+  }
 
-    this.raf = raf(::this.render).start();
+  /**
+   * bind method
+   */
+  bind () {
+    this.render = this.render.bind(this)
+    RafManager.add(this.render)
   }
 
   /**
    * render method
    */
-  render() {
+  render () {
+    this.cube.rotation.x += 0.01
+    this.cube.rotation.y += 0.02
 
-    this.cube.rotation.x += 0.01;
-    this.cube.rotation.y += 0.02;
+    this.cube.update(this.clock.time)
 
-    this.cube.update(this.clock.time);
-
-    this.postProcessing.update();
-    this.camera.update(this.clock.delta);
-  };
+    this.postProcessing.update()
+    this.camera.update(this.clock.delta)
+  }
 }
 
-export default Scene;
+export default Scene

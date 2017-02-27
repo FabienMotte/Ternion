@@ -1,5 +1,5 @@
-import { Composer } from '@superguigui/wagner';
-import Window from '../Events/Window';
+import Composer from './Composer'
+import { Window } from 'signals'
 
 /**
  * EffectComposer class
@@ -8,25 +8,32 @@ class EffectComposer extends Composer {
 
   /**
    * constructor method
-   * @param {object} renderer Renderer
-   * @param {object} options  Options
+   * @param {Object} renderer Renderer
    */
-  constructor(renderer, options) {
-    super(renderer, options);
+  constructor (renderer) {
+    super(renderer)
 
-    this.setSize(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio);
+    this.renderer = renderer
 
-    Window.add(::this.resize);
+    this.bind()
   }
 
   /**
-   * resize method
-   * @param {number} width  Width
-   * @param {number} height Height
+   * bind method
    */
-  resize(width, height) {
-    this.setSize(width * window.devicePixelRatio, height * window.devicePixelRatio);
+  bind () {
+    this.onWindowResize = this.onWindowResize.bind(this)
+    Window.onResize.add(this.onWindowResize)
+  }
+
+  /**
+   * onWindowResize method
+   * @param {number} width  Window width
+   * @param {number} height Window height
+   */
+  onWindowResize (width, height) {
+    this.setSize(width * this.renderer.getPixelRatio(), height * this.renderer.getPixelRatio())
   }
 }
 
-export default EffectComposer;
+export default EffectComposer

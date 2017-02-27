@@ -1,18 +1,6 @@
-import oui from 'ouioui';
+import dat from 'dat-gui'
 
-/**
- * GUI class
- */
-class GUI {
+const GUI = new dat.GUI({ autoPlace: false, scrollable: true })
+document.body.appendChild(GUI.domElement)
 
-  /**
-   * constructor method
-   */
-  constructor() {
-    this.panel = oui.datoui();
-  }
-}
-
-const gui = new GUI();
-
-export default gui.panel;
+export default GUI

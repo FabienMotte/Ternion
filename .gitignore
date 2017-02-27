@@ -1,2 +1,10 @@
+.DS_Store
+.idea
 node_modules/
+dist/
+doc/
+*.log
 bundle.js
+main.css
+*.map
+*.log

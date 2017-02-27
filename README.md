@@ -6,12 +6,14 @@ A simple **starter kit** to **prototype** quickly your ideas with Three.js.
 
 ## Features
 
-- **Three.js** with **Wagner** for post processing
+- **Three.js** and **post processing**
+- **dat.GUI**
 - [**budō**](https://github.com/mattdesl/budo) (with **LiveReload**) for a fast development server
 - ES2015 transpiling with **Babel 6** (*stage 0* enabled)
 - Development and production (with **UglifyJS** transform) builds
 - **Glslify** transform (vert/frag shaders)
 - Some useful **basic functions** and **helpers**
+- **Stylus** support for stylesheets
 
 ## Install
 
