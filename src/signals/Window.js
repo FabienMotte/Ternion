@@ -1,5 +1,4 @@
 import Signal from 'quark-signal'
-import { on } from 'dom-events'
 import debounce from 'lodash.debounce'
 
 /**
