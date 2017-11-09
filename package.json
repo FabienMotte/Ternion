@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "start": "concurrently --kill-others \"node server.js\" \"npm run css:dev\"",
-    "build": "NODE_ENV='production' browserify src/main.js | uglifyjs -c > public/build/bundle.js",
+    "build": "NODE_ENV='production' node build.js | uglifyjs -c > public/build/bundle.js",
     "css:dev": "stylus -u autoprefixer-stylus -w ./src/stylesheets/main.styl -o public/build --sourcemap",
     "css:prod": "stylus -u autoprefixer-stylus ./src/stylesheets/main.styl -o public/build --compress",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -32,30 +32,59 @@
   },
   "homepage": "https://github.com/FabienMotte/Ternion",
   "devDependencies": {
-    "autoprefixer-stylus": "^0.13.0",
-    "babel-preset-es2015": "^6.22.0",
-    "babel-preset-stage-0": "^6.22.0",
-    "babelify": "^7.3.0",
-    "budo": "^9.4.7",
-    "concurrently": "^3.3.0",
+    "autoprefixer-stylus": "^0.14.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browserify": "^14.5.0",
+    "budo": "^10.0.4",
+    "concurrently": "^3.5.0",
     "dat-gui": "^0.5.0",
-    "glslify": "^6.0.1",
+    "glslify": "^6.1.0",
     "stylus": "^0.54.5",
-    "uglifyjs": "^2.4.10"
+    "uglify-js": "^3.1.8"
   },
   "dependencies": {
     "color-shader-functions": "0.0.2",
     "glslify-bare": "FabienMotte/glslify-bare",
     "lodash.debounce": "^4.0.8",
-    "quark-signal": "^1.1.0",
-    "raf": "^3.3.0",
-    "three": "^0.84.0",
+    "quark-signal": "^1.1.2",
+    "raf": "^3.4.0",
+    "three": "^0.88.0",
     "three-orbit-controls": "^82.1.0"
   },
   "browserify": {
     "transform": [
       "babelify",
       "glslify-bare"
+    ],
+    "paths": [
+      "./src"
+    ]
+  },
+  "standard": {
+    "globals": [
+      "THREE",
+      "TweenMax",
+      "TimelineMax",
+      "Back",
+      "Bounce",
+      "Circ",
+      "Cubic",
+      "Ease",
+      "Elastic",
+      "Expo",
+      "Linear",
+      "Power0",
+      "Power1",
+      "Power2",
+      "Power3",
+      "Power4",
+      "Quad",
+      "RoughEase",
+      "Sine",
+      "SplitText"
     ]
   }
 }
