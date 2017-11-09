@@ -1,3 +1,4 @@
+const path = require('path')
 const budo = require('budo')
 
 budo('src/main.js', {
@@ -9,7 +10,7 @@ budo('src/main.js', {
   watchGlob: '**/*.{html,css,frag,vert,glsl}',
   browserify: {
     paths: [
-      __dirname + '/src'
+      path.join(__dirname, '/src')
     ],
     insertGlobalVars: {
       THREE: (file, dir) => `require('three')`
