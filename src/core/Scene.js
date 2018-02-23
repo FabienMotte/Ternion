@@ -1,5 +1,4 @@
-import RafManager from 'helpers/RafManager'
-import Clock from 'helpers/Clock'
+import Raf from 'quark-raf'
 import Cube from 'entities/Cube'
 import PostProcessing from 'postProcessing/PostProcessing'
 
@@ -11,31 +10,30 @@ class Scene extends THREE.Scene {
     this.camera = camera
     this.postProcessing = new PostProcessing(this, this.renderer, this.camera)
 
-    this.clock = new Clock()
-
+    this.bind()
     this.createScene()
+  }
+
+  bind () {
+    this.render = this.render.bind(this)
+    Raf.add(this.render)
   }
 
   createScene () {
     this.cube = new Cube()
     this.add(this.cube)
-
-    this.bind()
   }
 
-  bind () {
-    this.render = this.render.bind(this)
-    RafManager.add(this.render)
-  }
+  render (delta, time) {
+    const cube = this.cube
 
-  render () {
-    this.cube.rotation.x += 0.01
-    this.cube.rotation.y += 0.02
+    cube.rotation.x += 0.01
+    cube.rotation.y += 0.02
 
-    this.cube.update(this.clock.time)
+    cube.update(time)
 
-    this.postProcessing.update()
-    this.camera.update(this.clock.delta)
+    this.postProcessing.update(delta, time)
+    this.camera.update()
   }
 }
 

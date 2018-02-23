@@ -1,6 +1,6 @@
 {
   "name": "ternion",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "Ternion, a simple starter kit to prototype quickly your ideas with Three.js",
   "main": "src/index.js",
   "private": true,
@@ -35,10 +35,11 @@
     "color-shader-functions": "0.0.2",
     "glslify-bare": "FabienMotte/glslify-bare",
     "lodash.debounce": "^4.0.8",
+    "quark-raf": "^1.0.4",
     "quark-signal": "^1.1.2",
     "raf": "^3.4.0",
     "three": "^0.90.0",
-    "three-orbit-controls": "^82.1.0"
+    "three-orbitcontrols": "^2.0.0"
   },
   "devDependencies": {
     "autoprefixer-stylus": "^0.14.0",

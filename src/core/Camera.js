@@ -1,4 +1,4 @@
-import OrbitControls from 'helpers/OrbitControls'
+import OrbitControls from 'three-orbitcontrols'
 import Window from 'signals/Window'
 import GUI from 'helpers/GUI'
 
@@ -22,8 +22,8 @@ class Camera extends THREE.PerspectiveCamera {
     GUI.add(this.controls, 'enabled').name('OrbitControls')
   }
 
-  update (delta) {
-    this.controls.update(delta)
+  update () {
+    this.controls.update()
   }
 
   onWindowResize (width, height) {

@@ -27,7 +27,7 @@ class Cube extends THREE.Object3D {
   }
 
   update (time) {
-    this.material.update(time)
+    this.material.update(time / 1000)
   }
 }
 

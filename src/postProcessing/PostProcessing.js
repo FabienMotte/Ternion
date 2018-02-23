@@ -37,9 +37,9 @@ class PostProcessing {
     return this.passes.find(pass => pass.name === name).constructor
   }
 
-  update () {
+  update (delta, time) {
     if (this.active && this.passes.length) {
-      this.composer.render(this.scene.clock.delta, this.scene.clock.time)
+      this.composer.render(delta, time)
     } else {
       this.renderer.render(this.scene, this.camera)
     }
