@@ -1,15 +1,7 @@
 import vertexShader from 'shaders/cube.vert'
 import fragmentShader from 'shaders/cube.frag'
 
-/**
- * CubeMaterial class
- */
 class CubeMaterial extends THREE.ShaderMaterial {
-
-  /**
-   * constructor method
-   * @param {Object} options Options
-   */
   constructor (options) {
     super(options)
 
@@ -22,10 +14,6 @@ class CubeMaterial extends THREE.ShaderMaterial {
     }
   }
 
-  /**
-   * update method
-   * @param {number} time Time
-   */
   update (time) {
     this.uniforms.time.value = time * 0.3
   }

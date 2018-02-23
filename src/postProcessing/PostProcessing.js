@@ -1,14 +1,9 @@
 import EffectComposer from './EffectComposer'
 import { RenderPass } from './passes'
-import { postProcessing } from 'config'
-import { Window } from 'signals'
+import postProcessing from 'config/postProcessing'
 import GUI from 'helpers/GUI'
 
-/**
-* PostProcessing
-*/
 class PostProcessing {
-
   constructor (scene, renderer, camera) {
     this.scene = scene
 
@@ -26,31 +21,22 @@ class PostProcessing {
 
     for (let i = 0; i < this.passes.length; i++) {
       this.composer.addPass(this.passes[i].constructor)
-      if (i == this.passes.length - 1) {
+      if (i === this.passes.length - 1) {
         this.passes[i].constructor.renderToScreen = true
       }
     }
 
-    // this.addGUI()
+    this.addGUI()
   }
 
-  /**
-  * addGUI method
-  */
   addGUI () {
-    GUI.add(this, 'active').name('PostProcessing').onChange()
+    GUI.add(this, 'active').name('PostProcessing')
   }
 
-  /**
-  * getPass method
-  */
   getPass (name) {
     return this.passes.find(pass => pass.name === name).constructor
   }
 
-  /**
-  * update method
-  */
   update () {
     if (this.active && this.passes.length) {
       this.composer.render(this.scene.clock.delta, this.scene.clock.time)

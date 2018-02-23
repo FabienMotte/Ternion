@@ -9,29 +9,17 @@ const blur = {
   y: new THREE.Vector2(0.0, 0.001953125)
 }
 
-/**
- * BloomPass class
- */
 class BloomPass extends Pass {
-
-	/**
-	 * constructor method
-	 *
-	 * @param {number} [strength=1]     Strength
-	 * @param {number} [kernelSize=16]  Kernel size
-	 * @param {number} [sigma=5.0]      Sigma
-	 * @param {number} [resolution=256] Resolution
-	 */
   constructor ({ strength = 1, kernelSize = 16, sigma = 5.0, resolution = 256 }) {
     super()
 
     const options = { minFilter: THREE.LinearFilter, magFilter: THREE.LinearFilter, format: THREE.RGBAFormat }
 
-		// Render targets
+    // Render targets
     this.renderTargetX = new THREE.WebGLRenderTarget(resolution, resolution, options)
     this.renderTargetY = new THREE.WebGLRenderTarget(resolution, resolution, options)
 
-		// Copy material
+    // Copy material
     this.materialCopy = new THREE.ShaderMaterial({
       uniforms: {
         tInput: { value: null },
@@ -43,7 +31,7 @@ class BloomPass extends Pass {
       transparent: true
     })
 
-		// Convolution material
+    // Convolution material
     this.materialConvolution = new THREE.ShaderMaterial({
       defines: {
         KERNEL_SIZE_FLOAT: kernelSize.toFixed(1),
@@ -70,12 +58,6 @@ class BloomPass extends Pass {
     this.scene.add(this.quad)
   }
 
-	/**
-	 * buildKernel method
-	 *
-	 * @param {number} sigma      Sigma
-	 * @param {number} kernelSize Kernel size
-	 */
   buildKernel (sigma, kernelSize) {
     const values = new Array(kernelSize)
 
@@ -88,7 +70,7 @@ class BloomPass extends Pass {
       sum += values[i]
     }
 
-		// Normalize the kernel
+    // Normalize the kernel
     for (let i = 0; i < kernelSize; ++i) {
       values[i] /= sum
     }
@@ -96,25 +78,10 @@ class BloomPass extends Pass {
     return values
   }
 
-	/**
-	 * gauss method
-	 *
-	 * @param {any} x     X
-	 * @param {any} sigma Sigma
-	 */
   gauss (x, sigma) {
     return Math.exp(-(x * x) / (2.0 * sigma * sigma))
   }
 
-  /**
-   * render method
-   * @param {Object}  renderer    Renderer
-   * @param {Object}  writeBuffer Write buffer
-   * @param {Object}  readBuffer  Read buffer
-   * @param {number}  delta       Delta
-   * @param {number}  time        Time
-   * @param {boolean} maskActive  Mask active
-   */
   render (renderer, writeBuffer, readBuffer, delta, time, maskActive) {
     const oldAutoClear = renderer.autoClear
     renderer.autoClear = false
@@ -123,7 +90,7 @@ class BloomPass extends Pass {
       renderer.context.disable(renderer.context.STENCIL_TEST)
     }
 
-		// Render quad with blured scene into texture (convolution pass 1)
+    // Render quad with blured scene into texture (convolution pass 1)
     this.quad.material = this.materialConvolution
 
     this.materialConvolution.uniforms['tInput'].value = readBuffer.texture
@@ -131,13 +98,13 @@ class BloomPass extends Pass {
 
     renderer.render(this.scene, this.camera, this.renderTargetX, true)
 
-		// Render quad with blured scene into texture (convolution pass 2)
+    // Render quad with blured scene into texture (convolution pass 2)
     this.materialConvolution.uniforms['tInput'].value = this.renderTargetX.texture
     this.materialConvolution.uniforms['uImageIncrement'].value = blur.y
 
     renderer.render(this.scene, this.camera, this.renderTargetY, true)
 
-		// Render original scene with superimposed blur to texture
+    // Render original scene with superimposed blur to texture
     this.quad.material = this.materialCopy
 
     this.materialCopy.uniforms['tInput'].value = this.renderTargetY.texture

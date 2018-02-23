@@ -1,14 +1,7 @@
 import Signal from 'quark-signal'
 import debounce from 'lodash.debounce'
 
-/**
- * Window class
- */
 class Window {
-
-  /**
-   * constructor method
-   */
   constructor () {
     this.width = window.innerWidth
     this.height = window.innerHeight
@@ -17,24 +10,15 @@ class Window {
     this.bind()
   }
 
-  /**
-   * createSignals method
-   */
   createSignals () {
     this.onResize = new Signal()
   }
 
-  /**
-   * bind method
-   */
   bind () {
     this.handleResize = this.handleResize.bind(this)
     window.addEventListener('resize', debounce(this.handleResize, 100))
   }
 
-  /**
-   * handleResize method
-   */
   handleResize () {
     this.width = window.innerWidth
     this.height = window.innerHeight

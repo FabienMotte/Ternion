@@ -1,14 +1,7 @@
 import CubeMaterial from './CubeMaterial'
 import GUI from 'helpers/GUI'
 
-/**
- * Cube class
- */
 class Cube extends THREE.Object3D {
-
-  /**
-   * constructor method
-   */
   constructor () {
     super()
 
@@ -20,9 +13,6 @@ class Cube extends THREE.Object3D {
     this.addGUI()
   }
 
-  /**
-   * addGUI method
-   */
   addGUI () {
     const positionFolder = GUI.addFolder('Cube Position')
     const scaleFolder = GUI.addFolder('Cube Scale')
@@ -36,10 +26,6 @@ class Cube extends THREE.Object3D {
     scaleFolder.add(this.scale, 'z').name('scale z').min(0).max(10).step(0.1)
   }
 
-  /**
-   * update method
-   * @param {number} time Time
-   */
   update (time) {
     this.material.update(time)
   }

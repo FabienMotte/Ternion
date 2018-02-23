@@ -1,10 +1,6 @@
 import Pass from '../Pass'
 
-/**
- * RenderPass class
- */
 class RenderPass extends Pass {
-
   constructor (scene, camera, overrideMaterial, clearColor, clearAlpha = 0) {
     super()
 
@@ -20,15 +16,6 @@ class RenderPass extends Pass {
     this.needsSwap = false
   }
 
-  /**
-   * render method
-   * @param {Object}  renderer    Renderer
-   * @param {Object}  writeBuffer Write buffer
-   * @param {Object}  readBuffer  Read buffer
-   * @param {number}  delta       Delta
-   * @param {number}  time        Time
-   * @param {boolean} maskActive  Mask active
-   */
   render (renderer, writeBuffer, readBuffer, delta, time, maskActive) {
     const oldAutoClear = renderer.autoClear
     renderer.autoClear = false

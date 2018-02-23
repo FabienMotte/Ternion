@@ -1,15 +1,6 @@
 import { ShaderPass, MaskPass, ClearMaskPass } from './passes'
 
-/**
- * Composer class
- */
 class Composer {
-
-  /**
-   * Constructor method
-   * @param  {Object} renderer     Renderer
-   * @param  {Object} renderTarget Render target
-   */
   constructor (renderer, renderTarget) {
     this.renderer = renderer
 

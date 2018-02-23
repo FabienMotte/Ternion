@@ -1,15 +1,7 @@
-import { Window } from 'signals'
+import Window from 'signals/Window'
 
-/**
- * Renderer class
- */
 class Renderer extends THREE.WebGLRenderer {
-
-  /**
-   * constructor method
-   * @param {object} options Options
-   */
-  constructor (options = { antialias: true, alpha: true }) {
+  constructor (options = { antialias: true, alpha: false }) {
     super(options)
 
     this.setSize(window.innerWidth, window.innerHeight)
@@ -19,19 +11,11 @@ class Renderer extends THREE.WebGLRenderer {
     this.bind()
   }
 
-  /**
-   * bind method
-   */
   bind () {
     this.onWindowResize = this.onWindowResize.bind(this)
     Window.onResize.add(this.onWindowResize)
   }
 
-  /**
-   * onWindowResize method
-   * @param {number} width  Width
-   * @param {number} height Height
-   */
   onWindowResize (width, height) {
     this.setSize(width, height)
   }

@@ -1,15 +1,8 @@
 import OrbitControls from 'helpers/OrbitControls'
-import { Window } from 'signals'
+import Window from 'signals/Window'
 import GUI from 'helpers/GUI'
 
-/**
- * Camera class
- */
 class Camera extends THREE.PerspectiveCamera {
-
-  /**
-   * constructor method
-   */
   constructor (fov, aspect, near, far) {
     super(fov, aspect, near, far)
 
@@ -20,34 +13,19 @@ class Camera extends THREE.PerspectiveCamera {
     this.addGUI()
   }
 
-  /**
-   * bind method
-   */
   bind () {
     this.onWindowResize = this.onWindowResize.bind(this)
     Window.onResize.add(this.onWindowResize)
   }
 
-  /**
-   * addGUI method
-   */
   addGUI () {
     GUI.add(this.controls, 'enabled').name('OrbitControls')
   }
 
-  /**
-   * update method
-   * @param {number} delta Delta
-   */
   update (delta) {
     this.controls.update(delta)
   }
 
-  /**
-   * onWindowResize method
-   * @param {number} width  Width
-   * @param {number} height Height
-   */
   onWindowResize (width, height) {
     this.aspect = width / height
     this.updateProjectionMatrix()

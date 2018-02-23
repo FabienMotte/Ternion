@@ -3,16 +3,7 @@ import Clock from 'helpers/Clock'
 import Cube from 'entities/Cube'
 import PostProcessing from 'postProcessing/PostProcessing'
 
-/**
- * Scene class
- */
 class Scene extends THREE.Scene {
-
-  /**
-   * constructor method
-   * @param {Renderer} renderer renderer instance
-   * @param {Camera}   camera   camera instance
-   */
   constructor (renderer, camera) {
     super()
 
@@ -25,9 +16,6 @@ class Scene extends THREE.Scene {
     this.createScene()
   }
 
-  /**
-   * createScene method
-   */
   createScene () {
     this.cube = new Cube()
     this.add(this.cube)
@@ -35,17 +23,11 @@ class Scene extends THREE.Scene {
     this.bind()
   }
 
-  /**
-   * bind method
-   */
   bind () {
     this.render = this.render.bind(this)
     RafManager.add(this.render)
   }
 
-  /**
-   * render method
-   */
   render () {
     this.cube.rotation.x += 0.01
     this.cube.rotation.y += 0.02

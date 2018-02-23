@@ -3,6 +3,7 @@
 node_modules/
 dist/
 doc/
+.history/
 *.log
 bundle.js
 main.css

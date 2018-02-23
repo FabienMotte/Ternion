@@ -10,11 +10,7 @@ const blurDirection = {
   y: new THREE.Vector2(0.0, 1.0)
 }
 
-/**
- * UnrealBloomPass class
- */
 class UnrealBloomPass extends Pass {
-
   constructor ({ resolution = new THREE.Vector2(256, 256), strength = 1, radius = 1, threshold = 0.8 }) {
     super()
 
@@ -75,11 +71,11 @@ class UnrealBloomPass extends Pass {
         defines: {
           KERNEL_RADIUS: kernelRadius,
           SIGMA: kernelRadius
-			  },
+        },
         uniforms: {
           colorTexture: { value: null },
           texSize: { value: new THREE.Vector2(0.5, 0.5) },
-				  direction: { value: new THREE.Vector2(0.5, 0.5) }
+          direction: { value: new THREE.Vector2(0.5, 0.5) }
         },
         vertexShader: basicVertexShader,
         fragmentShader: blurFragmentShader
@@ -199,13 +195,13 @@ class UnrealBloomPass extends Pass {
       renderer.context.disable(renderer.context.STENCIL_TEST)
     }
 
-		// 1. Extract Bright Areas
+    // 1. Extract Bright Areas
     this.materialHighPassFilter.uniforms['tInput'].value = readBuffer.texture
     this.materialHighPassFilter.uniforms['luminosityThreshold'].value = this.threshold
     this.quad.material = this.materialHighPassFilter
     renderer.render(this.scene, this.camera, this.renderTargetBright, true)
 
-		// 2. Blur All the mips progressively
+    // 2. Blur All the mips progressively
     let inputRenderTarget = this.renderTargetBright
 
     for (let i = 0; i < this.nMips; i++) {
@@ -224,14 +220,14 @@ class UnrealBloomPass extends Pass {
       inputRenderTarget = this.renderTargetsVertical[i]
     }
 
-		// Composite All the mips
+    // Composite All the mips
     this.quad.material = this.compositeMaterial
     this.compositeMaterial.uniforms['bloomStrength'].value = this.strength
     this.compositeMaterial.uniforms['bloomRadius'].value = this.radius
     this.compositeMaterial.uniforms['bloomTintColors'].value = this.bloomTintColors
     renderer.render(this.scene, this.camera, this.renderTargetsHorizontal[0], true)
 
-		// Blend it additively over the input texture
+    // Blend it additively over the input texture
     this.quad.material = this.materialCopy
     this.materialCopy.uniforms['tInput'].value = this.renderTargetsHorizontal[0].texture
 
