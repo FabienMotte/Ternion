@@ -38,7 +38,7 @@
     "quark-raf": "^1.0.4",
     "quark-signal": "^1.1.2",
     "raf": "^3.4.0",
-    "three": "^0.90.0",
+    "three": "^0.91.0",
     "three-orbitcontrols": "^2.0.0"
   },
   "devDependencies": {
@@ -47,13 +47,13 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babelify": "^8.0.0",
-    "browserify": "^16.1.0",
-    "budo": "^11.1.7",
+    "browserify": "^16.1.1",
+    "budo": "^11.2.0",
     "concurrently": "^3.5.1",
     "dat-gui": "^0.5.0",
     "glslify": "^6.1.1",
     "stylus": "^0.54.5",
-    "uglify-js": "^3.3.13"
+    "uglify-js": "^3.3.15"
   },
   "browserify": {
     "transform": [
